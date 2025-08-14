@@ -11,4 +11,4 @@ def about(request):
     return HttpResponse("Wanna know about GatePass?")
 
 def contact(request):
-    return render(request, template_name='contact.html', )
+    return render(request, template_name='contact.html', context={'name': "BramTech"})
