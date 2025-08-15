@@ -4,9 +4,9 @@ from django.db import models
 # Create your models here.
 
 class Resident(User):
-    first_name = models.CharField(blank=False, null=False)
-    last_name = models.CharField(blank=False, null=False)
-    email = models.EmailField(unique=True, blank=False, null=False)
+    # first_name = models.CharField(blank=False, null=False)
+    # last_name = models.CharField(blank=False, null=False)
+    # email = models.EmailField(unique=True, blank=False, null=False)
     phone = models.CharField(unique=True, blank=False, null=False)
     is_resident = models.BooleanField(default=False)
 
