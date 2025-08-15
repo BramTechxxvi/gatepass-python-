@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'demo',
     'resident',
-    'security',
+    'security_guard',
 ]
 
 MIDDLEWARE = [
