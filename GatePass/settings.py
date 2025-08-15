@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'resident',
     'security_guard',
     'account',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
