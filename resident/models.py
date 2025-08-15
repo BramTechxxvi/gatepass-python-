@@ -1,7 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.utils import timezone
-from datetime import timedelta
 
 # Create your models here.
 
@@ -23,7 +21,7 @@ class House(models.Model):
 class Invite(models.Model):
     code = models.CharField(max_length=6, default='', unique=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    expires_at = models.DateTimeField(default=timezone.now() + timedelta(hours=8))
+    expires_at = models.DateTimeField(null=False, blank=False)
     status = models.BooleanField(default=True)
     house = models.ForeignKey(House, on_delete=models.PROTECT)
 
