@@ -23,7 +23,7 @@ def add_house(request):
             house_number=serializer.validated_data['house_number'],
             apartment_number=serializer.validated_data['apartment_number'],
             street_name=serializer.validated_data['street_name'],
-            user_type=serializer.validated_data['user_type'],
+            user=serializer.validated_data['user'],
         )
         return Response(data={"message": "house added successfully"}, status=status.HTTP_201_CREATED)
 
