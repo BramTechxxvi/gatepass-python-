@@ -19,5 +19,5 @@ class Admin(BaseUserAdmin):
     )
 
 @admin.register(House)
-class HouseAdmin(BaseUserAdmin):
-    list_display = [ ]
+class HouseAdmin(admin.ModelAdmin):
+    list_display = ['house_number', 'apartment_number', 'street_name']
