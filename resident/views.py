@@ -25,7 +25,8 @@ def add_house(request):
             street_name=serializer.validated_data['street_name'],
             user=serializer.validated_data['user'],
         )
-        return Response(data={"message": "house added successfully"}, status=status.HTTP_201_CREATED)
+        serializer.save()
+        return Response(data={"message": "House added successfully"}, status=status.HTTP_201_CREATED)
 
     print(user)
     return Response(data={"message": "Not Authorized"}, status=status.HTTP_403_FORBIDDEN)
