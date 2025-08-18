@@ -1,3 +1,4 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 # Create your models here.
@@ -7,11 +8,10 @@ from django.db import models
 #     email = models.EmailField(blank=False, null=False, unique=True)
 #     phone = models.CharField(blank=False, null=False, max_length=11, unique=True)
 
-
-class Resident(UserAccount):
+class User(AbstractUser):
+    phone = models.CharField(max_length=11, unique=True)
+    email = models.EmailField(unique=True)
     is_resident = models.BooleanField(default=False)
-
-class SecurityGuard(UserAccount):
     is_security_guard = models.BooleanField(default=False)
 
 
@@ -19,7 +19,7 @@ class House(models.Model):
     house_number = models.PositiveIntegerField(blank=False, null=False)
     apartment_number = models.PositiveIntegerField(blank=False, null=False)
     street_name = models.CharField(max_length= 255, blank=False, null=False)
-    resident = models.ForeignKey(Resident, on_delete=models.PROTECT)
+    resident = models.ForeignKey(User, on_delete=models.PROTECT)
 
 
 class Invite(models.Model):

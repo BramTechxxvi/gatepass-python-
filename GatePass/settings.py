@@ -42,8 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'demo',
     'resident',
-    'security_guard',
-    'account',
     'rest_framework',
 ]
 
@@ -138,4 +136,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'account.UserAccount'
+AUTH_USER_MODEL = 'resident.User'
