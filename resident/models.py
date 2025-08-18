@@ -17,7 +17,7 @@ class House(models.Model):
     house_number = models.PositiveIntegerField(blank=False, null=False)
     apartment_number = models.PositiveIntegerField(blank=False, null=False)
     street_name = models.CharField(max_length= 255, blank=False, null=False)
-    resident = models.ForeignKey(User, on_delete=models.PROTECT)
+    user = models.ForeignKey(User, on_delete=models.PROTECT)
 
 
 class Invite(models.Model):
