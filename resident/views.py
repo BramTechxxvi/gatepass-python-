@@ -7,6 +7,6 @@ from django.http import HttpResponse
 def create_resident(request):
     return HttpResponse("Created Successfully")
 
-
-def get_expiry_time() :
-    return timezone.now() + timedelta(hours=10)
+#
+# def get_expiry_time() :
+#     return timezone.now() + timedelta(hours=10)

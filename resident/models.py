@@ -1,10 +1,18 @@
-from account.models import UserAccount
 from django.db import models
 
 # Create your models here.
 
+# first_name = models.CharField(blank=False, null=False)
+#     last_name = models.CharField(blank=False, null=False)
+#     email = models.EmailField(blank=False, null=False, unique=True)
+#     phone = models.CharField(blank=False, null=False, max_length=11, unique=True)
+
+
 class Resident(UserAccount):
     is_resident = models.BooleanField(default=False)
+
+class SecurityGuard(UserAccount):
+    is_security_guard = models.BooleanField(default=False)
 
 
 class House(models.Model):
