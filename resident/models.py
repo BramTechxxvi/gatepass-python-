@@ -21,7 +21,7 @@ class House(models.Model):
 
 
 class Invite(models.Model):
-    code = models.CharField(max_length=6, default=generate_code(), unique=True)
+    code = models.CharField(max_length=6, default=generate_code, unique=True)
     created_at = models.DateTimeField(auto_now_add=True)
     expires_at = models.DateTimeField(null=False, blank=False)
     status = models.BooleanField(default=True)

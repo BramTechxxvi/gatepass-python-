@@ -7,4 +7,13 @@ from .models import User
 @admin.register(User)
 class Admin(BaseUserAdmin):
     list_display = ['first_name', 'last_name', 'email', 'phone', 'password']
+    add_fieldsets = (
+        (
+            None,
+            {
+                "classes": ("wide",),
+                "fields": ("username", "usable_password", "password1", "password2"),
+            },
+        ),
+    )
 
