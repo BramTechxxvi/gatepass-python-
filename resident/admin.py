@@ -8,6 +8,8 @@ from .models import User, House
 @admin.register(User)
 class Admin(BaseUserAdmin):
     list_display = ['username', 'first_name', 'last_name', 'email', 'phone', 'password', 'is_resident', 'is_security_guard', "is_superuser"]
+    list_editable = ['first_name', 'last_name', 'is_resident', 'is_security_guard', 'is_superuser']
+
     add_fieldsets = (
         (
             None,
