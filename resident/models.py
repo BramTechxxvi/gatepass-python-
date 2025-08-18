@@ -31,5 +31,5 @@ class Invite(models.Model):
 class Visitor(models.Model):
     first_name = models.CharField(blank=False, null=False, max_length=255)
     last_name = models.CharField(blank=False, null=False, max_length=255)
-    phone = models.CharField(blank=False, null=False, max_length=11)
+    phone = models.CharField(blank=False, null=False, max_length=11, unique=True)
     invite = models.ForeignKey(Invite, on_delete=models.PROTECT)
