@@ -14,6 +14,8 @@ class HouseSerializer(serializers.ModelSerializer):
         fields = ['house_number', 'apartment_number', 'street_name']
 
 class CreateInviteSerializer(serializers.Serializer):
+
+
     code = models.CharField(max_length=6, default=generate_code, unique=True)
     created_at = models.DateTimeField(auto_now_add=True)
     expires_at = models.DateTimeField(null=False, blank=False)
