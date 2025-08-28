@@ -6,8 +6,8 @@ from datetime import timedelta
 from rest_framework .permissions import IsAuthenticated
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
-from resident.models import User, House
-from resident.serializer import HouseSerializer
+from resident.models import User, House, Invite
+from resident.serializer import HouseSerializer, CreateInviteSerializer
 
 
 # Create your views here.
@@ -34,6 +34,17 @@ def add_house(request):
 @api_view()
 def create_resident(request):
     return HttpResponse("Created Successfully")
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def invite(request):
+    user =request.user
+    serializer = CreateInviteSerializer(data=request.data)
+    serializer.is_valid(raise_exception=True)
+    house = get_object_or_404(House, user_id=user.pk)
+    Invite.objects.create(
+        expiration_at= serializer.validated_data['expires_at'],
+    )
 
 
 def get_expiry_time() :
