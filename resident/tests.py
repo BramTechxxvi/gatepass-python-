@@ -18,4 +18,4 @@ class HouseTest(TestCase):
 
     def test_that_anonymous_user_cannot_add_house_returns_403(self):
         response = self.client.login(email="hawa@gmail.com", password="testpassword")
-        'self.assertEqual(response.status_code, 403)
+        self.assertEqual(response.status_code, 403)
