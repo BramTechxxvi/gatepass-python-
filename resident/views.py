@@ -1,12 +1,11 @@
 from rest_framework import status
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from django.http import HttpResponse
 from django.utils import timezone
 from datetime import timedelta
-
+from rest_framework .permissions import IsAuthenticated
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
-
 from resident.models import User, House
 from resident.serializer import HouseSerializer
 
@@ -14,6 +13,7 @@ from resident.serializer import HouseSerializer
 # Create your views here.
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def add_house(request):
     serializer = HouseSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)

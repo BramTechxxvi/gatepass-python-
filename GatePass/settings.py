@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'demo',
     'resident',
     'rest_framework',
+    'djoser'
 ]
 
 MIDDLEWARE = [
