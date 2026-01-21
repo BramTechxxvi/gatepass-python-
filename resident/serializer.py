@@ -12,8 +12,3 @@ class HouseSerializer(serializers.ModelSerializer):
     class Meta:
         model = House
         fields = ['house_number', 'apartment_number', 'street_name']
-
-class CreateInviteSerializer(serializers.Serializer):
-
-
-
